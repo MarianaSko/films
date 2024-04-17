@@ -13,15 +13,23 @@ const movieSchema = new Schema({
     rating: {
         type: Number,
         max: 10,
+        default: 0
     },
     release_date: {
         type: Date,
         default: Date.now
     },
-    genre: [String],
-    actors: [String],
+    genre: {
+        type: [String],
+        default: ["Genre is not specified"]
+    },
+    actors: {
+        type: [String],
+        default: ["Actors are not specified"]
+    },
     director: {
         type: String,
+        default: 'Director is not specified',
     },
     image: {
         type: String,

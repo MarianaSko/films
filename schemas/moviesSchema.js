@@ -7,7 +7,7 @@ export const createMovieSchema = Joi.object({
 
     release_date: Joi.date(),
     genre: Joi.array(),
-    actros: Joi.array(),
+    actors: Joi.array(),
     director: Joi.string(),
     image: Joi.string(),
 
