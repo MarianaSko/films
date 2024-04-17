@@ -24,8 +24,8 @@ export const addMovie = (data) => Movie.create(data);
 export const removeMovie = (contactId) => Movie.findByIdAndDelete(contactId)
 export const removeMovieByFilter = filter => Movie.findOneAndDelete(filter)
 
-// export const updateMovieById = (contactId, data) => Movie.findByIdAndUpdate(contactId, data)
-export const updateMovieByFilter = (filter, data) => Movie.findOneAndUpdate(filter, data);
+export const updateMovieById = (contactId, data) => Movie.findByIdAndUpdate(contactId, data)
+// export const updateMovieByFilter = (filter, data) => Movie.findOneAndUpdate(filter, data);
 
 // export const updateStatusContact = (contactId, data) => Movie.findByIdAndUpdate(contactId, data);
 // export const updateStatusByFilter = (filter, data) => Movie.findOneAndUpdate(filter, data)

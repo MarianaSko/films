@@ -35,22 +35,13 @@ const createMovie = async (req, res) => {
 const updateMovie = async (req, res) => {
     const { id } = req.params;
 
-    const result = await moviesService.updateMovieByFilter({ _id: id, owner }, req.body)
+    const result = await moviesService.updateMovieById(id, req.body)
     if (!result) {
         throw HttpError(404);
     }
     res.json(result)
 };
 
-// const updateStatus = async (req, res) => {
-//     const { id } = req.params;
-
-//     const result = await moviesService.updateStatusByFilter({ _id: id, owner }, req.body)
-//     if (!result) {
-//         throw HttpError(404);
-//     }
-//     res.json(result)
-// }
 
 export default {
     getAllMovies: ctrlWrapper(getAllMovies),
@@ -58,5 +49,4 @@ export default {
     deleteMovie: ctrlWrapper(deleteMovie),
     createMovie: ctrlWrapper(createMovie),
     updateMovie: ctrlWrapper(updateMovie),
-    // updateStatus: ctrlWrapper(updateStatus)
 }
