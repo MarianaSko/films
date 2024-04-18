@@ -7,16 +7,6 @@ const getAllMovies = async (req, res) => {
     res.json(result);
 };
 
-// const getOneMovie = async (req, res) => {
-//     const { id } = req.params;
-
-//     const result = await moviesService.getMovieByFilter({ _id: id });
-//     if (!result) {
-//         throw HttpError(404);
-//     }
-//     res.json(result);
-// };
-
 const deleteMovie = async (req, res) => {
     const { id } = req.params;
 
@@ -45,7 +35,6 @@ const updateMovie = async (req, res) => {
 
 export default {
     getAllMovies: ctrlWrapper(getAllMovies),
-    // getOneMovie: ctrlWrapper(getOneMovie),
     deleteMovie: ctrlWrapper(deleteMovie),
     createMovie: ctrlWrapper(createMovie),
     updateMovie: ctrlWrapper(updateMovie),

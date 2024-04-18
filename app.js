@@ -3,9 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
 import moviesRouter from "./routes/moviesRouter.js";
-// import authRouter from "./routes/authRouter.js";
 
 dotenv.config();
 
@@ -14,10 +12,8 @@ const app = express();
 app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
-// app.use(express.static("public"));
 
 app.use("/api/movies", moviesRouter);
-
 
 app.use((_, res) => {
     res.status(404).json({ message: "Route not found" });
